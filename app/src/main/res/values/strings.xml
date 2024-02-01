@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="TypographyDashes">
+
+    <string name="app_name">Push Sdk</string>
+    <string name="onesignal_app_id">d11803d0-7929-4c18-bbc5-b1a9b87ec5ac</string>
+
+</resources>
