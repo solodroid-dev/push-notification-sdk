@@ -1,2 +1,2 @@
-# push-sdk
-A library used without any ad integration
+# push-notification-sdk
+A library used to send push notifications using the onesignal service
