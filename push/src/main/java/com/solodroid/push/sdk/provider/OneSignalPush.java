@@ -57,7 +57,7 @@ public class OneSignalPush {
 
             OneSignal.getDebug().setLogLevel(LogLevel.VERBOSE);
             OneSignal.initWithContext(context, oneSignalAppId);
-            OneSignal.getUser().getPushSubscription().optIn();
+            //OneSignal.getUser().getPushSubscription().optIn();
 
             OneSignal.getNotifications().addClickListener(result -> {
                 INotification notification = result.getNotification();
@@ -96,7 +96,7 @@ public class OneSignalPush {
 
             OneSignal.getDebug().setLogLevel(LogLevel.VERBOSE);
             OneSignal.initWithContext(context, oneSignalAppId);
-            OneSignal.getUser().getPushSubscription().optIn();
+            //OneSignal.getUser().getPushSubscription().optIn();
 
             OneSignal.getNotifications().addClickListener(result -> {
                 INotification notification = result.getNotification();
