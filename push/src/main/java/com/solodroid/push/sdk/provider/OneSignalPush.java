@@ -127,6 +127,14 @@ public class OneSignalPush {
             });
         }
 
+        public void disablePushSubscriptions() {
+            OneSignal.getUser().getPushSubscription().optOut();
+        }
+
+        public void enablePushSubscriptions() {
+            OneSignal.getUser().getPushSubscription().optIn();
+        }
+
         public void requestNotificationPermission() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 if (context.checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
