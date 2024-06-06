@@ -3,6 +3,7 @@ package com.solodroid.push.sdkdemo;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     OneSignalPush.Builder onesignal;
     Toolbar toolbar;
+    String playerId = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-
         }
 
     }
@@ -73,6 +74,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        getPlayerId();
+    }
+
+    private void getPlayerId() {
+        playerId = onesignal.getUserSubscriptionId();
+        if (playerId != null) {
+            if (!playerId.isEmpty()) {
+                Log.d(TAG, "player id: " + playerId);
+            } else {
+                Log.d(TAG, "player id is empty: " + playerId.length());
+            }
+        } else {
+            Log.d(TAG, "player id null");
+        }
     }
 
 }

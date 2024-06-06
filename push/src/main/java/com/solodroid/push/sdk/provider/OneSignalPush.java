@@ -11,6 +11,7 @@ import androidx.core.app.ActivityCompat;
 import com.onesignal.OneSignal;
 import com.onesignal.debug.LogLevel;
 import com.onesignal.notifications.INotification;
+import com.onesignal.user.subscriptions.IPushSubscriptionObserver;
 import com.solodroid.push.sdk.utils.OnNotificationClickListener;
 
 import org.json.JSONObject;
@@ -133,6 +134,10 @@ public class OneSignalPush {
 
         public void enablePushSubscriptions() {
             OneSignal.getUser().getPushSubscription().optIn();
+        }
+
+        public String getUserSubscriptionId() {
+            return OneSignal.getUser().getPushSubscription().getId();
         }
 
         public void requestNotificationPermission() {
