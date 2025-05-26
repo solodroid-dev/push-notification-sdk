@@ -8,6 +8,7 @@ import android.util.Log;
 
 import androidx.core.app.ActivityCompat;
 
+import com.onesignal.Continue;
 import com.onesignal.OneSignal;
 import com.onesignal.debug.LogLevel;
 import com.onesignal.notifications.INotification;
@@ -146,6 +147,10 @@ public class OneSignalPush {
                     ActivityCompat.requestPermissions((Activity) context, new String[]{android.Manifest.permission.POST_NOTIFICATIONS}, OneSignalPush.NOTIFICATION_PERMISSION_REQUEST_CODE);
                 }
             }
+        }
+
+        public void requestPushNotificationPermission() {
+            OneSignal.getNotifications().requestPermission(false, Continue.none());
         }
 
     }
